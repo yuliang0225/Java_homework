@@ -1,5 +1,7 @@
 import edu.princeton.cs.algs4.StdOut;
 
+import java.util.Arrays;
+
 public class Exc_1_1 {
     public static void main(String[] args){
         System.out.println("Hellow World!!!!!!!!!!!!!");
@@ -11,6 +13,10 @@ public class Exc_1_1 {
         exc_1_1_7();
         exc_1_1_8();
         exc_1_1_9(18);
+        exc_1_1_10();
+        exc_1_1_12();
+        System.out.println("1.1.16:");
+        System.out.println(exR1(6));
 
     }
 
@@ -105,17 +111,38 @@ public class Exc_1_1 {
         System.out.println(s);
     }
 
+
     public static void exc_1_1_10(){
         System.out.println("1.1.10:");
 
-        String s = "";
-        for (int n = N; n > 0; n /= 2)
-            s = (n % 2)+s;
+        int[] a = new int[10];
+        for (int i = 0; i <10; i++)
+            a[i] = i*i;
 
-        System.out.println(s);
+        System.out.println(Arrays.toString(a));
     }
 
-    
+    public static void exc_1_1_12(){
+        System.out.println("1.1.12:");
+
+        int[] a = new int[10];
+        for (int i = 0; i < 10; i++)
+            a[i]=9-i;
+        for (int i = 0; i < 10; i++)
+            a[i]=a[a[i]];
+        System.out.println(Arrays.toString(a));
+    }
+
+    public static String exR1(int n){
+        if (n <= 0) return "";
+        return exR1(n-3) +n + exR1(n-2) +n;
+    }
+
+
+
+
+
+
 
 
 
